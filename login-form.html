@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color:grey;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.feedback{
+    border: 2px solid blue;
+    background: blue;
+    color: aliceblue;
+    border-radius: 4px;
+    
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body><div>
+    <div class="feedback">
+        <H1>FEEDBACK PORTAL </H1>
+    </div>
+   
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" id="userType">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById("loginForm").addEventListener("submit" , function(e){
+        e.preventDefault();
+
+        const userType = document.getElementById("userType").value;
+        if(userType == "student"){
+            window.location.href = "student-feedback-form.html";
+        }
+        else if(userType == "teacher"){
+            window.location.href = "teacher-feedback-form.html";
+        }
+    });
+</script>
+
+</body>
+</html>
